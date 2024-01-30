@@ -1,0 +1,6 @@
+<div *ngIf="colaborador">
+  <app-colaborador-form [btnAcao]="btnAcao" [btnTitulo]="btnTitulo"
+  [dadosColaborador]="colaborador"
+  (onSubmit)="editarColaborador($event)"></app-colaborador-form>
+</div>
+

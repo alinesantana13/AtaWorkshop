@@ -1,0 +1,44 @@
+<div class="form-control" id="form-component">
+  <div>
+    <label>Buscar </label>
+    <input type="text" class="form-control" placeholder="Qual colaborador está buscando?" (input)="search($event)">
+  </div>
+
+  <table class="table table-hover">
+    <thead class="thead-light">
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Data de Realização</th>
+        <th>Descrição</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let workshop of workshops">
+      <tr>
+        <td>{{ workshop.id }}</td>
+        <td>{{ workshop.nome }}</td>
+        <td>{{ workshop.dataDeRealizacao }}</td>
+        <td>{{ workshop.descricao }}</td>
+        <td>
+          <button routerLink="/api/workshops/editar/{{workshop.id}}"
+          class="text-dark btn btn-sm btn-outline-primary">Editar</button>
+        </td>
+        <td>
+          <button routerLink="/api/workshops/detalhar/{{workshop.id}}"
+          class="text-dark btn btn-sm btn-outline-warning">Detalhar</button>
+        </td>
+        <td>
+          <button class="text-dark btn btn-sm btn-outline-danger" (click)="excluirWorkshop(workshop)" *ngIf="workshop">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div>
+    <button routerLink="/api/workshops/cadastro"
+    class="text-dark btn btn-secondary">Cadatrar novo Workshop</button>
+  </div>
+</div>

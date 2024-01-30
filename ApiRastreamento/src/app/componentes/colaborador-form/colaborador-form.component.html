@@ -1,0 +1,21 @@
+<div class="form-control">
+  <h1>{{ btnTitulo}}</h1>
+
+  <form [formGroup]="colaboradorForm" (ngSubmit)="submit()" #formDit="ngForm">
+    <input type="hidden" formControlName="id">
+    <div class="mb-3">
+      <label for="nome">Nome: </label>
+      <input type="text" class="mx-0 form-control" formControlName="nome" placeholder="Digite o seu nome" required>
+    </div>
+
+    <div class="row g-2">
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary" [disabled]="!colaboradorForm.valid">{{ btnAcao }}</button>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-primary" routerLink="/api/colaboradores">Voltar</button>
+      </div>
+    </div>
+
+  </form>
+</div>

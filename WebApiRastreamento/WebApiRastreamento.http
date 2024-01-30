@@ -1,0 +1,6 @@
+@WebApiRastreamento_HostAddress = http://localhost:5074
+
+GET {{WebApiRastreamento_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

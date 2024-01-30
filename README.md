@@ -1,27 +1,61 @@
-# ApiRastreamento
+## Rastreamento de Participação em Workshops
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
+## :computer: Comandos para rodar o projeto
 
-## Development server
+```bash
+git clone link
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```bash
+cd desafio-backend-m02-b2bt05
+```
 
-## Code scaffolding
+```bash
+npm install
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+npm run dev
+```
 
-## Build
+O servidor inciará na porta:3000 - para isso acesse:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+http://localhost:3000
+```
 
-## Running unit tests
+## Banco de dados
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Workshops
 
-## Running end-to-end tests
+| campo              | tipo de dado |
+| ------------------ | ------------ |
+| id                 | int          |
+| nome               | string       |
+| data_de_realizacao | date         |
+| descricao          | string       |
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+#### Colaboradores
 
-## Further help
+| campo | tipo de dado |
+| ----- | ------------ |
+| id    | int          |
+| nome  | string       |
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#### Ata de Presença
+
+| campo          | tipo de dado |
+| -------------- | ------------ |
+| id             | int          |
+| workshop_id    | int          |
+| colaborador_id | int          |
+
+## Rotas
+
+/api/workshops
+
+/api/colaboradores
+
+## 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:

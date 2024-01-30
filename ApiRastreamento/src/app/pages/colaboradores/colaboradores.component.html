@@ -1,0 +1,40 @@
+<div class="form-control" id="form-component">
+  <div>
+    <label>Buscar </label>
+    <input type="text" class="form-control" placeholder="Qual colaborador está buscando?" (input)="search($event)">
+  </div>
+
+  <table class="table table-hover">
+    <thead class="thead-light">
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let colaborador of colaboradores">
+      <tr>
+        <td>{{ colaborador.id }}</td>
+        <td>{{ colaborador.nome }}</td>
+        <td>
+          <button routerLink="/api/colaboradores/editar/{{colaborador.id}}"
+          class="text-dark btn btn-sm btn-outline-primary">Editar</button>
+        </td>
+        <td>
+          <button routerLink="/api/colaboradores/detalhar/{{colaborador.id}}"
+          class="text-dark btn btn-sm btn-outline-warning">Detalhar</button>
+        </td>
+        <td>
+          <button class="text-dark btn btn-sm btn-outline-danger" (click)="excluirColaborador(colaborador)" *ngIf="colaborador">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div>
+    <button routerLink="/api/colaboradores/cadastro"
+    class="text-dark btn btn-secondary">Cadatrar novo Colaborador</button>
+  </div>
+</div>

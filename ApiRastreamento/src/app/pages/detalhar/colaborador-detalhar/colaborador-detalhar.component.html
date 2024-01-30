@@ -1,0 +1,20 @@
+<div>
+  <h1>Detalhes Colaborador</h1>
+</div>
+
+<div *ngIf="colaborador">
+  <form>
+    <div class="form-group">
+      <label class="form-label">Id: </label>
+      <input type="text" class="form-control" value="{{colaborador.id}}" disabled>
+    </div>
+    <div class="input-box">
+      <label class="form-label">Nome: </label>
+      <input type="text" class="form-control" value="{{colaborador.nome}}" disabled>
+    </div>
+    <br>
+    <div>
+      <button class="btn btn-primary" routerLink="/api/colaboradores">Voltar</button>
+    </div>
+  </form>
+</div>

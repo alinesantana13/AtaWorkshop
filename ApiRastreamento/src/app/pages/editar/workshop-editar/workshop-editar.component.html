@@ -1,0 +1,5 @@
+<div *ngIf="workshop">
+  <app-workshop-form [btnAcao]="btnAcao" [btnTitulo]="btnTitulo"
+  [dadosWorkshop]="workshop"
+  (onSubmit)="editarWorkshop($event)"></app-workshop-form>
+</div>
