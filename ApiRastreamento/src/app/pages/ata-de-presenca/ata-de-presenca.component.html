@@ -1,0 +1,23 @@
+<div class="form-control">
+  <table class="table table-hover">
+    <thead class="thead-light">
+      <tr>
+        <th>Id</th>
+        <th>WorkshopId</th>
+        <th>ColaboradorId</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let ataDePresenca of atasDePresenca">
+      <tr>
+        <td>{{ ataDePresenca.id }}</td>
+        <td>{{ ataDePresenca.workshopId }}</td>
+        <td>{{ ataDePresenca.nomeColaborador }}</td>
+        <td>
+          <button class="text-dark btn btn-sm btn-outline-danger" (click)="excluirAtaDePresenca(ataDePresenca)" *ngIf="atasDePresenca">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebApiRastreamento")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f60e038901f675194d8d6e5945d53a97736f065e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ed44bd79036fc8acf9c32429a754edf789e2943")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebApiRastreamento")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebApiRastreamento")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

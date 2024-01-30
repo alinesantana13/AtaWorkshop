@@ -20,6 +20,9 @@ import { WorkshopFormComponent } from './componentes/workshop-form/workshop-form
 import { WorkshopCadastroComponent } from './pages/cadastro/workshop-cadastro/workshop-cadastro.component';
 import { WorkshopEditarComponent } from './pages/editar/workshop-editar/workshop-editar.component';
 import { WorkshopDetalharComponent } from './pages/detalhar/workshop-detalhar/workshop-detalhar.component';
+import { AtaDePresencaComponent } from './pages/ata-de-presenca/ata-de-presenca.component';
+import { AtadepresencaComponent } from './pages/ata/atadepresenca/atadepresenca.component';
+import { AtadepresencaFormComponent } from './componentes/atadepresenca-form/atadepresenca-form.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { WorkshopDetalharComponent } from './pages/detalhar/workshop-detalhar/wo
     WorkshopFormComponent,
     WorkshopCadastroComponent,
     WorkshopEditarComponent,
-    WorkshopDetalharComponent
+    WorkshopDetalharComponent,
+    AtaDePresencaComponent,
+    AtadepresencaComponent,
+    AtadepresencaFormComponent
   ],
   imports: [
     BrowserModule,

@@ -23,7 +23,7 @@ export class WorkshopEditarComponent implements OnInit{
     const id = Number(this.route.snapshot.paramMap.get('id'));
 
     this.workshopService.GetWorshop(id).subscribe((data) => {
-      this.workshop = data.dados;
+      this.workshop = data;
     });
 
   }

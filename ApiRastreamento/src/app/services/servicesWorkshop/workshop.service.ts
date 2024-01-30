@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Workshop } from 'src/app/models/workshops';
 import { environment } from 'src/environments/environment.development';
-import { Response } from 'src/app/models/response';
 
 @Injectable({
   providedIn: 'root'
@@ -14,23 +13,23 @@ export class WorkshopService {
 
   constructor(private http: HttpClient) { }
 
-  GetWorshops(): Observable<Response<Workshop[]>>{
-    return this.http.get<Response<Workshop[]>>(this.apiUrl);
+  GetWorshops(): Observable<Workshop[]>{
+    return this.http.get<Workshop[]>(this.apiUrl);
   }
 
-  GetWorshop(id: number): Observable<Response<Workshop>>{
-    return this.http.get<Response<Workshop>>(`${this.apiUrl}/${id}`);
+  GetWorshop(id: number): Observable<Workshop>{
+    return this.http.get<Workshop>(`${this.apiUrl}/${id}`);
   }
 
-  CreateWorkshop(workshop: Workshop): Observable<Response<Workshop[]>>{
-    return this.http.post<Response<Workshop[]>>(`${this.apiUrl}`, workshop);
+  CreateWorkshop(workshop: Workshop){
+    return this.http.post(`${this.apiUrl}`, workshop);
   }
 
-  EditarWorkshop(workshop: Workshop): Observable<Response<Workshop[]>>{
-    return this.http.put<Response<Workshop[]>>(`${this.apiUrl}`, workshop);
+  EditarWorkshop(workshop: Workshop){
+    return this.http.put(`${this.apiUrl}`, workshop);
   }
 
-  ExcluirColaborador(workshop: Workshop): Observable<Response<Workshop[]>>{
-    return this.http.delete<Response<Workshop[]>>(`${this.apiUrl}?id=${workshop.id}`);
+  ExcluirColaborador(workshop: Workshop){
+    return this.http.delete(`${this.apiUrl}?id=${workshop.id}`);
   }
 }

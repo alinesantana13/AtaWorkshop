@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class ColaboradoresComponent implements OnInit{
   @Input() colaborador?: Colaborador;
 
+
   colaboradores: Colaborador[] = [];
   colaboradoresGeral: Colaborador[] = [];
 
@@ -20,10 +21,9 @@ export class ColaboradoresComponent implements OnInit{
   //o que for primeiro executado
   ngOnInit(): void {
     this.colaboradorService.GetColaboradores().subscribe(data => {
-      const dados = data.dados;
 
-      this.colaboradores = data.dados;
-      this.colaboradoresGeral = data.dados;
+      this.colaboradores = data;
+      this.colaboradoresGeral = data;
     });
   }
 
@@ -39,9 +39,8 @@ export class ColaboradoresComponent implements OnInit{
   excluirColaborador(colaborador: Colaborador){
     this.colaboradorService.ExcluirColaborador(colaborador).subscribe((data)=>{
       this.colaboradorService.GetColaboradores().subscribe((datas) =>{
-        this.colaboradores = datas.dados;
+        this.colaboradores = datas;
       })
     })
 }
-
 }

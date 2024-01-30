@@ -19,7 +19,7 @@ export class ColaboradorDetalharComponent implements OnInit{
       const id = Number(this.route.snapshot.paramMap.get('id'));
 
       this.colaboradorService.GetColaborador(id).subscribe((data) => {
-        this.colaborador = data.dados;
+        this.colaborador = data;
       })
 
 

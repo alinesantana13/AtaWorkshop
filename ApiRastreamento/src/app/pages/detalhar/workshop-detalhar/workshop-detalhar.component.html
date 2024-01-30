@@ -36,47 +36,13 @@
   </table>
 </div>
 
+<br>
 <!--Ata de presença-->
-<h3>Participantes Presentes</h3>
-<div class="form-control" id="form-component">
-  <table class="table table-hover">
-    <thead class="thead-light">
-      <tr>
-        <th>Id</th>
-        <th>Nome</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td *ngIf="workshop">{{ workshop.id }}</td>
-        <td *ngIf="workshop">{{ workshop.nome }}</td>
-        <!-- <td>
-          <button routerLink="/api/workshops/editar/{{workshop.id}}"
-          class="text-dark btn btn-sm btn-outline-primary">Editar</button>
-        </td>
-        <td>
-          <button routerLink="/api/workshops/detalhar/{{workshop.id}}"
-          class="text-dark btn btn-sm btn-outline-warning">Detalhar</button>
-        </td> -->
-        <td>
-
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<!--Fim da ata-->
+<app-ata-de-presenca></app-ata-de-presenca>
+<br>
 
 <div>
-    <label>Buscar </label>
-    <!-- <input type="text" class="form-control" placeholder="Qual colaborador está buscando?" (input)="search($event)"> -->
-</div>
-
-<div>
-  <button routerLink="/api/workshops/ata"
+  <button routerLink="/api/atadepresenca"
   class="text-dark btn btn-secondary">Ata de Presença</button>
   <button class="btn btn-primary" routerLink="/api/workshops">Voltar</button>
 </div>

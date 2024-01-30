@@ -1,0 +1,22 @@
+<div class="form-control">
+  <h1>Ata de Presença</h1>
+  <form [formGroup]="ataDePresencaForm" (ngSubmit)="submit()" #formDit="ngForm">
+    <input type="hidden" formControlName="id">
+    <div class="mb-3">
+      <label for="workshop">WorkshopId: </label>
+      <input type="text" class="mx-0 form-control" formControlName="workshopId" required>
+      <label for="colaboradorId">ColaboradorId: </label>
+      <input type="text" class="mx-0 form-control" formControlName="colaboradorId"  required>
+    </div>
+
+    <div class="row g-2">
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary" [disabled]="!ataDePresencaForm.valid">Assinar</button>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-primary" routerLink="/api/workshops">Voltar</button>
+      </div>
+    </div>
+
+  </form>
+</div>

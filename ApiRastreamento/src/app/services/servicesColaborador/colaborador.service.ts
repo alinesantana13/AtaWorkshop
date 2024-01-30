@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Response } from '../../models/response';
 import { Colaborador } from '../../models/colaboradores';
 
 @Injectable({
@@ -14,24 +13,24 @@ export class ColaboradorService {
 
   constructor(private http: HttpClient) { }
 
-  GetColaboradores(): Observable<Response<Colaborador[]>> {
-    return this.http.get<Response<Colaborador[]>>(this.apiUrl);
+  GetColaboradores(): Observable<Colaborador[]> {
+    return this.http.get<Colaborador[]>(this.apiUrl);
   }
 
-  GetColaborador(id: number): Observable<Response<Colaborador>> {
-    return this.http.get<Response<Colaborador>>(`${this.apiUrl}/${id}`);
+  GetColaborador(id: number): Observable<Colaborador> {
+    return this.http.get<Colaborador>(`${this.apiUrl}/${id}`);
   }
 
-  CreateColaborador(colaborador: Colaborador): Observable<Response<Colaborador[]>> {
-    return this.http.post<Response<Colaborador[]>>(`${this.apiUrl}`, colaborador);
+  CreateColaborador(colaborador: Colaborador) {
+    return this.http.post(`${this.apiUrl}`, colaborador);
   }
 
-  EditarColaborador(colaborador : Colaborador) : Observable<Response<Colaborador[]>> {
-    return this.http.put<Response<Colaborador[]>>(`${this.apiUrl}`, colaborador);
+  EditarColaborador(colaborador : Colaborador) {
+    return this.http.put(`${this.apiUrl}`, colaborador);
   }
 
-  ExcluirColaborador(colaborador: Colaborador) : Observable<Response<Colaborador[]>>{
-    return this.http.delete<Response<Colaborador[]>>(`${this.apiUrl}?id=${colaborador.id}`);
+  ExcluirColaborador(colaborador: Colaborador){
+    return this.http.delete(`${this.apiUrl}?id=${colaborador.id}`);
   }
 
 }

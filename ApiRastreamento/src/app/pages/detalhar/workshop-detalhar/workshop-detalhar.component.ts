@@ -19,7 +19,7 @@ export class WorkshopDetalharComponent implements OnInit {
       const id = Number(this.route.snapshot.paramMap.get('id'));
 
       this.workshopService.GetWorshop(id).subscribe((data) => {
-        const dados = data.dados;
+        const dados = data;
 
         dados.dataDeRealizacao = new Date(dados.dataDeRealizacao!).toLocaleDateString("pt-BR");
 

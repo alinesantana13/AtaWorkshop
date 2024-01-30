@@ -17,13 +17,13 @@ export class WorkshopsComponent implements OnInit{
 
   ngOnInit(): void {
     this.workshopService.GetWorshops().subscribe((data) => {
-      const dados = data.dados;
-      dados.map((item) => {
+      data.map((item) => {
         item.dataDeRealizacao = new Date(item.dataDeRealizacao!).toLocaleDateString('pt-Br');
       });
 
-      this.workshops = dados;
-      this.workshopsGeral = dados;
+      this.workshops = data;
+
+      this.workshopsGeral = data;
     })
   }
 
@@ -39,7 +39,7 @@ export class WorkshopsComponent implements OnInit{
   excluirWorkshop(workshop: Workshop){
     this.workshopService.ExcluirColaborador(workshop).subscribe((data) => {
       this.workshopService.GetWorshops().subscribe((datas) => {
-        this.workshops = datas.dados;
+        this.workshops = datas;
       })
     })
   }

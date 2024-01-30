@@ -8,9 +8,10 @@ import { ColaboradorDetalharComponent } from './pages/detalhar/colaborador-detal
 import { WorkshopCadastroComponent } from './pages/cadastro/workshop-cadastro/workshop-cadastro.component';
 import { WorkshopEditarComponent } from './pages/editar/workshop-editar/workshop-editar.component';
 import { WorkshopDetalharComponent } from './pages/detalhar/workshop-detalhar/workshop-detalhar.component';
+import { AtadepresencaComponent } from './pages/ata/atadepresenca/atadepresenca.component';
 
 const routes: Routes = [
-  //{path: '', component: LoginComponent},
+  {path: '', component: WorkshopsComponent},
   {path: 'api/colaboradores', component: ColaboradoresComponent},
   {path: 'api/colaboradores/cadastro', component: ColaboradorCadastroComponent},
   {path: 'api/colaboradores/editar/:id', component: ColaboradorEditarComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'api/workshops', component: WorkshopsComponent},
   {path: 'api/workshops/cadastro', component: WorkshopCadastroComponent},
   {path: 'api/workshops/editar/:id', component: WorkshopEditarComponent},
-  {path: 'api/workshops/detalhar/:id', component: WorkshopDetalharComponent}
+  {path: 'api/workshops/detalhar/:id', component: WorkshopDetalharComponent},
+  {path: 'api/atadepresenca', component: AtadepresencaComponent}
 ];
 
 @NgModule({
