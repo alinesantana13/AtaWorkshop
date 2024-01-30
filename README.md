@@ -31,8 +31,9 @@ Comando para rodar a parte do backend
 ```bash
 cd dotnet run
 ```
+#### Obs.: Mudar as credenciais do banco de dados para conseguir testar localmente
 
-## Banco de dados
+## Banco de dados (MySQL)
 
 #### Workshops
 
