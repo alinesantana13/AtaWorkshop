@@ -40,3 +40,4 @@ E:\Aline\projetos\fullstack-dotnet-angular\WebApiRastreamento\obj\Debug\net8.0\r
 E:\Aline\projetos\fullstack-dotnet-angular\WebApiRastreamento\obj\Debug\net8.0\WebApiRastreamento.pdb
 E:\Aline\projetos\fullstack-dotnet-angular\WebApiRastreamento\obj\Debug\net8.0\WebApiRastreamento.genruntimeconfig.cache
 E:\Aline\projetos\fullstack-dotnet-angular\WebApiRastreamento\obj\Debug\net8.0\ref\WebApiRastreamento.dll
+E:\Aline\projetos\fullstack-dotnet-angular\WebApiRastreamento\obj\Debug\net8.0\WebApiRastreamento.sourcelink.json

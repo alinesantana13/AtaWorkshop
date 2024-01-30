@@ -101,5 +101,60 @@ namespace WebApiRastreamento.Controllers
             }
 
         }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateAtaDePresenca(AtaDePresencaModel editarAtaDePresenca)
+        {
+            try
+            {
+                var ataDePresenca = _context.AtaDePresenca.FirstOrDefault(x => x.Id == editarAtaDePresenca.Id);
+
+
+                if (ataDePresenca == null)
+                {
+                    return NotFound();
+                }
+
+                ataDePresenca.WorkshopId = editarAtaDePresenca.WorkshopId;
+                ataDePresenca.ColaboradorId = editarAtaDePresenca.ColaboradorId;
+
+                await _context.SaveChangesAsync();
+
+                var atasDePresenca = _context.AtaDePresenca.ToList();
+
+                return Ok(atasDePresenca);
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Erro: " + ex.Message);
+            }
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteAtaDePresenca(int id)
+        {
+            try
+            {
+                var ataDePresenca = _context.AtaDePresenca.FirstOrDefault(x => x.Id == id);
+
+                if (ataDePresenca == null)
+                {
+                    return NotFound();
+                }
+
+                _context.AtaDePresenca.Remove(ataDePresenca);
+                await _context.SaveChangesAsync();
+
+                var atasDePresenca = _context.AtaDePresenca.ToList();
+
+                return Ok(atasDePresenca);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, "Erro: " + ex.Message);
+            }
+        }
     }
 }

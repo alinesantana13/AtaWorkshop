@@ -52,7 +52,7 @@ namespace WebApiRastreamento.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateColaborador(WorkshopRequest request)
+        public async Task<IActionResult> CreateWorkshop(WorkshopRequest request)
         {
             try
             {
@@ -71,6 +71,62 @@ namespace WebApiRastreamento.Controllers
             {
 
                 return StatusCode(500, "Erro interno no servidor" + ex.Message);
+            }
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateWorkshop(WorkshopModel editarWorkshop)
+        {
+            try
+            {
+                var workshop = _context.Workshops.FirstOrDefault(x => x.Id == editarWorkshop.Id);
+
+
+                if (workshop == null)
+                {
+                    return NotFound();
+                }
+
+                workshop.Nome = editarWorkshop.Nome;
+                workshop.DataDeRealizacao = editarWorkshop.DataDeRealizacao;
+                workshop.Descricao = editarWorkshop.Descricao;
+
+                await _context.SaveChangesAsync();
+
+                var workshops = _context.Workshops.ToList();
+
+                return Ok(workshops);
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Erro: " + ex.Message);
+            }
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteWorkshop(int id)
+        {
+            try
+            {
+                var workshop = _context.Workshops.FirstOrDefault(x => x.Id == id);
+
+                if (workshop == null)
+                {
+                    return NotFound();
+                }
+
+                _context.Workshops.Remove(workshop);
+                await _context.SaveChangesAsync();
+
+                var workshops = _context.Workshops.ToList();
+
+                return Ok(workshops);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, "Erro: " + ex.Message);
             }
         }
     }
