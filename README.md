@@ -1,4 +1,5 @@
 ## Rastreamento de Participação em Workshops
+Projeto feito durante processo seletivo para estágio, em que era necessário construir uma API REST sendo fullstack.
 
 ## :computer: Comandos para rodar o projeto
 
@@ -7,21 +8,28 @@ git clone link
 ```
 
 ```bash
-cd desafio-backend-m02-b2bt05
+cd fullstack-dotnet-angular
 ```
 
+```bash
+cd ApiRastreamento
+```
 ```bash
 npm install
 ```
-
+Comando para rodar a parte do frontend
 ```bash
-npm run dev
+ng serve
 ```
 
-O servidor inciará na porta:3000 - para isso acesse:
+Abrir outro terminal 
 
 ```bash
-http://localhost:3000
+cd WebApiRastreamento
+```
+Comando para rodar a parte do backend
+```bash
+cd dotnet run
 ```
 
 ## Banco de dados
@@ -30,27 +38,27 @@ http://localhost:3000
 
 | campo              | tipo de dado |
 | ------------------ | ------------ |
-| id                 | int          |
-| nome               | string       |
-| data_de_realizacao | date         |
-| descricao          | string       |
+| Id                 | int          |
+| Nome               | string       |
+| Data_de_realizacao | DateTime         |
+| Descricao          | string       |
 
 #### Colaboradores
 
 | campo | tipo de dado |
 | ----- | ------------ |
-| id    | int          |
-| nome  | string       |
+| Id    | int          |
+| Nome  | string       |
 
 #### Ata de Presença
 
 | campo          | tipo de dado |
 | -------------- | ------------ |
-| id             | int          |
-| workshop_id    | int          |
-| colaborador_id | int          |
+| Id             | int          |
+| Workshop_id    | int          |
+| Colaborador_id | int          |
 
-## Rotas
+## Rotas usadas no frontend
 
 /api/workshops
 
